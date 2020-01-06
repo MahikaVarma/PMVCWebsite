@@ -472,7 +472,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 .section-header .section-title {
   font-size: 32px;
   color: #111;
-  text-transform: uppercase;
+  text-transform: none;
   text-align: center;
   font-weight: 700;
   margin-bottom: 5px;
@@ -593,26 +593,31 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-size: 14px;
 }
 
-/* Services Section
+#facts .counters{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+/* forApplicants Section
 --------------------------------*/
 
-#services {
+#forApplicants {
   background: #fff;
   background-size: cover;
   padding: 80px 0 60px 0;
 }
 
-#services .box {
+#forApplicants .box {
   padding: 50px 20px;
   margin-bottom: 50px;
   text-align: center;
   border: 1px solid #e6e6e6;
-  height: 200px;
+  height: 400px;
   position: relative;
   background: #fafafa;
 }
 
-#services .icon {
+#forApplicants .icon {
   position: absolute;
   top: -36px;
   left: calc(50% - 36px);
@@ -642,64 +647,65 @@ body.mobile-nav-active #mobile-nav-toggle {
   background: #2dc997;
 }
 
-#services .icon a {
+#forApplicants .icon a {
   display: inline-block;
 }
 
-#services .icon i {
+#forApplicants .icon i {
   color: #fff;
   font-size: 24px;
 }
-
-#services .box:hover .icon {
+/*
+#forApplicants .box:hover .icon {
   background: #fff;
   border: 2px solid #2dc997;
 }
 
-#services .box:hover .icon i {
+#forApplicants .box:hover .icon i {
   color: #2dc997;
 }
 
-#services .box:hover .icon a {
+#forApplicants .box:hover .icon a {
   color: #2dc997;
 }
-
-#services .title {
+*/
+#forApplicants .title {
   font-weight: 700;
   font-size: 18px;
   margin-bottom: 15px;
   text-transform: uppercase;
 }
 
-#services .title a {
+#forApplicants .title a {
   color: #111;
 }
 
-#services .description {
+#forApplicants .description {
   font-size: 14px;
   line-height: 24px;
+  text-align: left;
 }
 
-/* Call To Action Section
+/* Project Muskaan Section
 --------------------------------*/
 
-#call-to-action {
+#muskaan {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/call-to-action-bg.jpg) fixed center center;
   background-size: cover;
   padding: 80px 0;
 }
 
-#call-to-action .cta-title {
+#muskaan .cta-title {
   color: #fff;
   font-size: 28px;
   font-weight: 700;
 }
 
-#call-to-action .cta-text {
+#muskaan .cta-text {
   color: #fff;
 }
 
-#call-to-action .cta-btn {
+#muskaan .cta-btn {
   font-family: "Poppins", sans-serif;
   text-transform: uppercase;
   font-weight: 500;
@@ -714,7 +720,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   color: #fff;
 }
 
-#call-to-action .cta-btn:hover {
+#muskaan .cta-btn:hover {
   background: #2dc997;
   border: 2px solid #2dc997;
 }
@@ -834,6 +840,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #team .member .pic img {
   max-width: 100%;
+  display:block;
+  margin: 0 auto;
 }
 
 #team .member h4 {
@@ -893,6 +901,14 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin-bottom: 20px;
   line-height: 22px;
   font-size: 14px;
+}
+
+#contact .info a{
+  color: #111;
+}
+
+#contact .info a:hover{
+  color: #2dc997;
 }
 
 #contact .info .email p {
