@@ -78,6 +78,7 @@
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
+
   </header><!-- #header -->
 
   <!--==========================
@@ -98,6 +99,99 @@
   </section><!-- #hero -->
 
   <main id="main">
+
+    <!--==========================
+    Countdown Clock Section
+  ============================-->
+    <section id="clock">
+      <div class="section-header">
+        <h3 class="section-title">Time Remaining</h3>
+        <p class="section-description-clock">Please ensure you submit your video before 31st August 2020 to be eligible for
+          the competition! </p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div id="clockdiv">
+
+          <div class="row">
+            <div class="circle">
+              <div>
+                <span class="days"></span>
+                <div class="smalltext">Days</div>
+              </div>
+            </div>
+
+            <div class="circle">
+              <div>
+                <span class="hours"></span>
+                <div class="smalltext">Hours</div>
+              </div>
+            </div>
+
+            <div class="circle">
+              <div>
+                <span class="minutes"></span>
+                <div class="smalltext">Minutes</div>
+              </div>
+            </div>
+
+            <div class="circle">
+              <div>
+                <span class="seconds"></span>
+                <div class="smalltext">Seconds</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        function getTimeRemaining(endtime) {
+          var t = Date.parse(endtime) - Date.parse(new Date());
+          var seconds = Math.floor((t / 1000) % 60);
+          var minutes = Math.floor((t / 1000 / 60) % 60);
+          var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+          var days = Math.floor(t / (1000 * 60 * 60 * 24));
+          return {
+            'total': t,
+            'days': days,
+            'hours': hours,
+            'minutes': minutes,
+            'seconds': seconds
+          };
+        }
+
+        function initializeClock(id, endtime) {
+          var clock = document.getElementById(id);
+          var daysSpan = clock.querySelector('.days');
+          var hoursSpan = clock.querySelector('.hours');
+          var minutesSpan = clock.querySelector('.minutes');
+          var secondsSpan = clock.querySelector('.seconds');
+
+          function updateClock() {
+            var t = getTimeRemaining(endtime);
+
+            daysSpan.innerHTML = t.days;
+            hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+            minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+            secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+            if (t.total <= 0) {
+              clearInterval(timeinterval);
+            }
+          }
+
+          updateClock();
+          var timeinterval = setInterval(updateClock, 1000);
+        }
+
+        var deadline = new Date(Date.parse(new Date('August 31 2020')));
+        initializeClock('clockdiv', deadline);
+
+      </script>
+
+
+    </section>
 
     <!--==========================
       About The Challenge Section
@@ -144,18 +238,18 @@
 
 
       <div class="container">
-        <br/>
-        <br/>
+        <br />
+        <br />
         <h2 class="title">A few videos submitted by our students</h2>
         <div class="row">
           <div class="col-lg-4 col-md-6 d-flex justify-content-center">
             <div class="card" style="width: 18rem;">
-              <iframe src="https://www.youtube.com/embed/VU_TPx58RSA" frameborder="0" 
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen></iframe>
+              <iframe src="https://www.youtube.com/embed/VU_TPx58RSA" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
               <div class="card-body">
                 <h5 class="card-title">Muskaan (Grade 9)</h5>
-                <p class="card-text">Watch a video on Ratios in Kannada. <br> 
+                <p class="card-text">Watch a video on Ratios in Kannada. <br>
                   Muskaan inspired us with her ambition to become a teacher. We named our project after her!</p>
               </div>
             </div>
@@ -178,7 +272,8 @@
                 allowfullscreen></iframe>
               <div class="card-body">
                 <h5 class="card-title">Omkar (Grade 8)</h5>
-                <p class="card-text">Watch a video teaching pronouns from the Karnataka State Board in Kannada and English.</p>
+                <p class="card-text">Watch a video teaching pronouns from the Karnataka State Board in Kannada and
+                  English.</p>
               </div>
             </div>
           </div>
@@ -193,7 +288,7 @@
     </section><!-- #about -->
 
     <!--==========================
-      Facts Section
+      Prizes Section
     ============================-->
     <section id="facts">
       <div class="container wow fadeIn">
@@ -244,6 +339,7 @@
                 </li>
                 <li>Set your video to public before submission so others can see it</li>
                 <li>Send the link of your video to us by email (project.muskaan.contact@gmail.com)</li>
+                <li>If you are unable to submit the video to YouTube, please let us know.</li>
                 <!--<li>Watch detailed video instructions here</li>-->
               </ul>
             </div>
@@ -578,9 +674,9 @@
     </div>
 
     <div class="container">
-      <div class="copyright">
+      <!-- <div class="copyright">
         &copy; Copyright <strong>Regna</strong>. All Rights Reserved
-      </div>
+      </div> -->
       <div class="credits">
         <!--
           All the links in the footer should remain intact.
@@ -588,7 +684,7 @@
           Licensing information: https://bootstrapmade.com/license/
           Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Regna
         -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Design template from <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>
   </footer><!-- #footer -->
